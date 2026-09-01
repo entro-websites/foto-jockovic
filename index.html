@@ -4,628 +4,786 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Foto Jocković - foto radnja u Beogradu</title>
+<meta name="description" content="Foto Jocković - izrada fotografija, slike za dokumenta, uramljivanje, slike na platnu, retuširanje i foto pokloni u Beogradu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --accent: #2c3e50;
-    --accent-dark: #1f2d3a;
-    --ink: #1c1c1c;
-    --muted: #5a5a5a;
+    --primary: #2c3e50;
+    --primary-dark: #1c2833;
     --bg: #ffffff;
-    --off: #f6f7f8;
-    --line: #e2e5e8;
+    --bg-alt: #f6f5f3;
+    --text: #21262b;
+    --text-muted: #565f68;
+    --border: #e1e0dd;
+    --radius: 8px;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
-    font-family: 'Source Sans 3', sans-serif;
-    color: var(--ink);
+    margin: 0;
+    font-family: 'PT Sans', Arial, sans-serif;
+    color: var(--text);
     background: var(--bg);
+    font-size: 17px;
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.15;
-    color: var(--accent);
+  h1, h2, h3 {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.2;
   }
+
+  p { margin: 0 0 16px 0; }
 
   a { color: inherit; text-decoration: none; }
 
-  img { display: block; max-width: 100%; height: auto; }
+  img { max-width: 100%; display: block; }
 
   .wrap {
-    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  /* Buttons */
+  .section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .section-alt { background: var(--bg-alt); }
+
+  .section-border-top { border-top: 1px solid var(--border); }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: 34px;
+    font-weight: 700;
+    max-width: 700px;
+    margin-bottom: 16px;
+  }
+
+  .section-lead {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin-bottom: 0;
+  }
+
   .btn {
     display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 14px 28px;
-    border-radius: 6px;
-    border: none;
+    padding: 14px 30px;
+    background: var(--primary);
+    color: #ffffff;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: var(--radius);
+    border: 1px solid var(--primary);
     cursor: pointer;
-    transition: background .15s ease;
   }
-  .btn:hover { background: var(--accent-dark); }
+
+  .btn:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
 
   .btn-outline {
-    display: inline-block;
     background: transparent;
-    color: var(--accent);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 12px 26px;
-    border-radius: 6px;
-    border: 1px solid var(--accent);
-    cursor: pointer;
-    transition: background .15s ease, color .15s ease;
+    color: var(--primary);
   }
-  .btn-outline:hover { background: var(--accent); color: #fff; }
 
-  /* Navbar */
-  header.nav {
+  .btn-outline:hover {
+    background: var(--primary);
+    color: #ffffff;
+  }
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
   }
+
   .nav-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
+    height: 78px;
   }
-  .brand {
+
+  .logo-link {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 1.3rem;
-    color: var(--accent);
-    letter-spacing: .5px;
   }
-  .brand img { width: 40px; height: auto; }
+
+  .logo-badge {
+    width: 42px;
+    height: 42px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-badge img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logo-text {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 19px;
+    color: var(--text);
+    letter-spacing: 0.2px;
+  }
 
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 36px;
   }
-  .nav-links a {
-    font-family: 'Roboto', sans-serif;
+
+  .nav-links a.nav-item {
+    font-family: 'Roboto', Arial, sans-serif;
     font-weight: 500;
-    font-size: .98rem;
-    color: var(--ink);
+    font-size: 15px;
+    color: var(--text);
   }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-links a.btn,
-  .nav-links a.btn:hover { color: #fff; }
+
+  .nav-links a.nav-item:hover { color: var(--primary); }
+
+  .nav-cta { display: flex; align-items: center; }
 
   .hamburger {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 0;
   }
+
   .hamburger span {
     display: block;
-    width: 26px;
+    width: 100%;
     height: 2px;
-    background: var(--accent);
-    margin: 5px 0;
-    transition: .2s;
+    background: var(--text);
   }
 
   .mobile-menu {
     display: none;
-    background: #fff;
-    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    padding-top: 16px;
+    padding-bottom: 24px;
   }
-  .mobile-menu.open { display: block; }
-  .mobile-menu a {
-    display: block;
-    padding: 14px 0;
-    font-family: 'Roboto', sans-serif;
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a.nav-item {
+    font-family: 'Roboto', Arial, sans-serif;
     font-weight: 500;
-    border-bottom: 1px solid var(--line);
-  }
-  .mobile-menu .btn {
-    margin: 18px 0;
-    padding: 14px 28px;
-    text-align: center;
-    color: #fff;
-    border-bottom: none;
+    font-size: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
   }
 
-  @media (max-width: 991px) {
-    .nav-links { display: none; }
-    .hamburger { display: block; }
-  }
+  .mobile-menu .btn { margin-top: 18px; text-align: center; }
 
-  /* Hero */
+  /* ---------- HERO ---------- */
+
   .hero {
-    padding-top: 96px;
-    padding-bottom: 96px;
-    background: var(--off);
-    border-bottom: 1px solid var(--line);
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    gap: 56px;
+
+  .hero-inner {
+    display: flex;
     align-items: center;
+    gap: 64px;
   }
+
+  .hero-text { flex: 1 1 480px; }
+
   .hero h1 {
+    font-size: 54px;
     font-weight: 900;
-    font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
-  .hero p.lead {
-    font-size: 1.15rem;
-    color: var(--muted);
-    max-width: 60ch;
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 520px;
     margin-bottom: 32px;
   }
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
+
+  .hero-image {
+    flex: 1 1 420px;
   }
-  .hero-img img {
+
+  .hero-image img {
     width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--line);
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
   }
 
-  /* Section base */
-  section { padding-top: 96px; padding-bottom: 96px; }
-  .section-head {
-    max-width: 720px;
-    margin-bottom: 56px;
-  }
-  .section-head h2 {
-    font-weight: 700;
-    font-size: 2.1rem;
-    margin-bottom: 16px;
-  }
-  .section-head p {
-    color: var(--muted);
-    font-size: 1.08rem;
-    max-width: 65ch;
-  }
+  /* ---------- SERVICES ---------- */
 
-  /* Services grid */
-  .services {
+  .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .card {
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-  .card .thumb {
-    background: var(--off);
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-  }
-  .card .thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .card-body {
-    padding: 22px;
-  }
-  .card-body h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .card-body p {
-    color: var(--muted);
-    font-size: .98rem;
+    gap: 32px;
+    margin-top: 56px;
   }
 
-  /* Placeholder blocks */
-  .ph {
-    background: repeating-linear-gradient(45deg, #e9ecef, #e9ecef 12px, #e3e6e9 12px, #e3e6e9 24px);
-    color: #6b7075;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: .85rem;
-    letter-spacing: .5px;
+  .service-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .service-card img,
+  .service-card .placeholder-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .placeholder-img {
+    background: #eceae6;
+    border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #8a8a86;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
     text-align: center;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    min-height: 160px;
+    letter-spacing: 0.5px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  /* Extra services list */
-  .extra {
-    background: var(--off);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+  .service-body {
+    padding-top: 22px;
+    padding-bottom: 24px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
-  .extra-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
+
+  .service-body h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
   }
-  .extra-item {
+
+  .service-body p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  /* ---------- ABOUT ---------- */
+
+  .about-inner {
     display: flex;
+    gap: 64px;
     align-items: flex-start;
-    gap: 14px;
-    padding: 24px;
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
   }
-  .extra-item svg {
-    flex: 0 0 auto;
-    width: 24px;
-    height: 24px;
-    stroke: var(--accent);
-    fill: none;
-    stroke-width: 1.8;
+
+  .about-text { flex: 1 1 480px; }
+
+  .about-image { flex: 1 1 420px; }
+
+  .about-image img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
   }
-  .extra-item h4 {
-    font-size: 1.02rem;
+
+  .about-points {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .point svg { flex-shrink: 0; margin-top: 3px; }
+
+  .point-text h3 {
+    font-size: 17px;
     font-weight: 700;
     margin-bottom: 4px;
-    color: var(--accent);
-  }
-  .extra-item p {
-    color: var(--muted);
-    font-size: .92rem;
-    line-height: 1.5;
   }
 
-  /* About */
-  .about-grid {
-    display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    gap: 56px;
-    align-items: center;
+  .point-text p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    max-width: 46ch;
   }
-  .about-grid p {
-    color: var(--muted);
-    font-size: 1.05rem;
-    max-width: 60ch;
-    margin-bottom: 18px;
-  }
-  .about-img {
-    aspect-ratio: 3 / 4;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
-  .about-img img { width: 100%; height: 100%; object-fit: cover; }
 
-  /* Contact */
-  .contact {
-    background: var(--accent);
-    color: #fff;
-  }
-  .contact h2 { color: #fff; }
-  .contact .section-head p { color: #cfd6dd; }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-  .contact-block h3 {
-    color: #fff;
-    font-size: 1.15rem;
-    margin-bottom: 8px;
-  }
-  .contact-block p, .contact-block a {
-    color: #d3dae1;
-    font-size: 1.02rem;
-    margin-bottom: 4px;
-    display: block;
-  }
-  .contact-block a:hover { color: #fff; text-decoration: underline; }
-  .contact .btn {
-    background: #fff;
-    color: var(--accent);
-    margin-top: 8px;
-  }
-  .contact .btn:hover { background: #e6eaee; }
+  /* ---------- CONTACT ---------- */
 
-  .hours-row {
+  .contact-inner {
     display: flex;
-    justify-content: space-between;
-    max-width: 340px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,.18);
-    font-size: 1rem;
-    color: #d3dae1;
+    gap: 64px;
   }
 
-  /* Footer */
-  footer {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    border-top: 1px solid var(--line);
-    background: #fff;
+  .contact-details { flex: 1 1 420px; }
+
+  .contact-map { flex: 1 1 420px; }
+
+  .contact-map .placeholder-img {
+    height: 100%;
+    min-height: 340px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
   }
+
+  .info-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .info-row:first-child { padding-top: 0; }
+
+  .info-row svg { flex-shrink: 0; margin-top: 3px; }
+
+  .info-row h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .info-row p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  .contact-cta { margin-top: 32px; }
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    background: var(--primary-dark);
+    color: #d8dde1;
+    padding-top: 56px;
+    padding-bottom: 40px;
+  }
+
   .footer-inner {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    color: var(--muted);
-    font-size: .92rem;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #37444f;
   }
 
-  /* Responsive */
+  .footer-brand { max-width: 320px; }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo .logo-badge { background: #ffffff10; border: 1px solid #4a5763; }
+
+  .footer-logo .logo-text { color: #ffffff; }
+
+  .footer-brand p {
+    font-size: 14px;
+    color: #a9b2ba;
+    margin-bottom: 0;
+  }
+
+  .footer-col h3 {
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    color: #a9b2ba;
+    padding-bottom: 10px;
+  }
+
+  .footer-col a:hover { color: #ffffff; }
+
+  .footer-bottom {
+    padding-top: 24px;
+    font-size: 13px;
+    color: #7c8790;
+    text-align: center;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+
   @media (max-width: 991px) {
-    .services { grid-template-columns: repeat(2, 1fr); }
-    .extra-list { grid-template-columns: repeat(2, 1fr); }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+
+    .hero-inner, .about-inner, .contact-inner {
+      flex-direction: column;
+    }
+
+    .hero-image, .about-image, .contact-map { width: 100%; }
+
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {
-    section { padding-top: 64px; padding-bottom: 64px; }
-    .hero { padding-top: 64px; padding-bottom: 64px; }
     .wrap { padding-left: 20px; padding-right: 20px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-    .hero h1 { font-size: 2.1rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 32px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-    .services { grid-template-columns: 1fr; }
-    .extra-list { grid-template-columns: 1fr; }
-    .extra-item { border-right: none; }
-    .section-head h2 { font-size: 1.7rem; }
+    .section { padding-top: 64px; padding-bottom: 64px; }
+    .hero { padding-top: 56px; padding-bottom: 56px; }
+    .hero h1 { font-size: 36px; }
+    .hero-sub { font-size: 16px; }
+    .section-title { font-size: 27px; }
+    .services-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
+    .hero-image img, .about-image img { height: 240px; }
+    .footer-inner { flex-direction: column; }
   }
 </style>
 </head>
 <body>
 
-<header class="nav">
+<header class="navbar">
   <div class="wrap nav-inner">
-    <a href="#" class="brand">
-      <img src="assets/logo.png" alt="Logo foto radnje Jocković">
-      FOTO JOCKOVIĆ
+    <a href="#pocetna" class="logo-link">
+      <span class="logo-badge">
+        <img src="assets/logo.png" alt="Znak foto radnje Jocković">
+      </span>
+      <span class="logo-text">Foto Jocković</span>
     </a>
+
     <nav class="nav-links">
-      <a href="#usluge">Usluge</a>
-      <a href="#pokloni">Foto pokloni</a>
-      <a href="#o-nama">O nama</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="#kontakt" class="btn">Naruči izradu</a>
+      <a class="nav-item" href="#pocetna">Početna</a>
+      <a class="nav-item" href="#usluge">Usluge</a>
+      <a class="nav-item" href="#o-nama">O nama</a>
+      <a class="nav-item" href="#kontakt">Kontakt</a>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Meni">
-      <span></span><span></span><span></span>
+
+    <div class="nav-cta">
+      <a href="#kontakt" class="btn">Pozovi nas</a>
+    </div>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Otvori meni" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
-  <div class="mobile-menu wrap" id="mobileMenu">
-    <a href="#usluge">Usluge</a>
-    <a href="#pokloni">Foto pokloni</a>
-    <a href="#o-nama">O nama</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="#kontakt" class="btn">Naruči izradu</a>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="wrap" style="display:flex; flex-direction:column;">
+      <a class="nav-item" href="#pocetna">Početna</a>
+      <a class="nav-item" href="#usluge">Usluge</a>
+      <a class="nav-item" href="#o-nama">O nama</a>
+      <a class="nav-item" href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn">Pozovi nas</a>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <h1>Foto radnja u Beogradu za sve što treba da se odštampa</h1>
-      <p class="lead">Slike sa telefona, fotografije za pasoš i ličnu, stare slike koje treba popraviti, uramljivanje. Donesete fajl ili slike, mi odštampamo dok čekate. Radimo ovo dugo i znamo šta prolazi na šalteru.</p>
-      <div class="hero-actions">
-        <a href="#kontakt" class="btn">Pozovi i naruči</a>
-        <a href="#usluge" class="btn-outline">Pogledaj usluge</a>
+<main>
+
+  <section class="hero" id="pocetna">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <h1>Fotografije za dokumenta, uspomene i sve između</h1>
+        <p class="hero-sub">Slikamo za lične isprave, štampamo porodične fotografije, uramljujemo slike, popravljamo stare i pravimo poklone od uspomena. Sve na jednoj adresi u Beogradu.</p>
+        <a href="#usluge" class="btn">Pogledaj šta radimo</a>
+      </div>
+      <div class="hero-image">
+        <img src="assets/izrada_fotografija-min.jpg" alt="Izrađene fotografije sa putovanja, porodičnih okupljanja i letovanja">
       </div>
     </div>
-    <div class="hero-img">
-      <img src="assets/izrada_fotografija-min.jpg" alt="Zid pun odštampanih fotografija sa putovanja, dece i porodičnih trenutaka">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="usluge">
+  <section class="section section-alt section-border-top" id="usluge">
+    <div class="wrap">
+      <span class="eyebrow">Usluge</span>
+      <h2 class="section-title">Sve što se radi sa fotografijom, radimo mi</h2>
+      <p class="section-lead">Od slike za pasoš do platna za zid. Donesete fotografiju ili nam je pošaljete, dogovorimo se šta vam treba i kad je gotovo.</p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <img src="assets/izrada_fotografija-min.jpg" alt="Odštampane fotografije u boji različitih veličina">
+          <div class="service-body">
+            <h3>Izrada fotografija</h3>
+            <p>Štampamo slike sa telefona, foto-aparata ili USB-a, u boji ili crno-belo, u formatu koji vam odgovara - od male slike za album do uvećanja za zid.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/fotografije_za_dokumenta-min.jpg" alt="Fotografije za lične dokumenta, portret na jednobojnoj pozadini">
+          <div class="service-body">
+            <h3>Fotografije za dokumenta</h3>
+            <p>Slikamo za ličnu kartu, pasoš, vozačku i studentske isprave. Sačekate par minuta i nosite gotove slike, bez zakazivanja termina.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/slike_na_platnu_canvas-min.jpg" alt="Fotografija odštampana na platnu okačena u dnevnoj sobi">
+          <div class="service-body">
+            <h3>Slike na platnu</h3>
+            <p>Prenosimo omiljenu fotografiju na platno za dnevnu sobu, spavaću ili kancelariju. Biramo format zajedno, vi nosite gotovu sliku.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/uramljivanje-fotografija-min.jpg" alt="Uramljena fotografija u crvenom i drvenom ramu sa paspartuom">
+          <div class="service-body">
+            <h3>Uramljivanje</h3>
+            <p>Uramljujemo fotografije, diplome i slike, u drvetu ili metalu, u više boja i širina. Paspartu biramo po vašoj želji.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/retusiranje_obrada_fotografije-min.jpg" alt="Stara oštećena fotografija pre i posle retuširanja">
+          <div class="service-body">
+            <h3>Retuširanje i foto montaža</h3>
+            <p>Popravljamo pocepane, izbledele i oštećene fotografije, vraćamo boju i uklanjamo ogrebotine. Radimo i montažu za čestitke i pozivnice.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/izrada_pecata-min.jpg" alt="Gumeni i samomastiljni pečati različitih veličina">
+          <div class="service-body">
+            <h3>Izrada pečata</h3>
+            <p>Pravimo pečate za firme, radnje i lične potrebe. Donesete tekst i znak koji vam treba, mi pripremimo otisak i pečat.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/vhs_na_dvd-min.jpg" alt="VHS kasete koje se presnimavaju na DVD">
+          <div class="service-body">
+            <h3>Presnimavanje VHS na DVD</h3>
+            <p>Prebacujemo stare VHS kasete na DVD, tako da porodični snimci ostanu sačuvani i kad kaseta i plejer prestanu da rade.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/foto_solje_solja_sa_slikom-min.jpg" alt="Foto šolje, foto puzzle i drugi pokloni sa odštampanom fotografijom">
+          <div class="service-body">
+            <h3>Foto pokloni</h3>
+            <p>Štampamo fotografije na šoljama, pravimo foto puzzle, foto kalendare, pozivnice i vizit karte. Dobar poklon kad slika kaže više od predmeta.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="placeholder-img">SKENIRANJE FOTOGRAFIJA I DOKUMENATA</div>
+          <div class="service-body">
+            <h3>Skeniranje</h3>
+            <p>Skeniramo stare fotografije, dokumenta i negative u visokoj rezoluciji, da vam ostanu i u digitalnom obliku.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-border-top" id="o-nama">
+    <div class="wrap about-inner">
+      <div class="about-text">
+        <span class="eyebrow">O nama</span>
+        <h2 class="section-title">Radnja u kojoj se fotografija ne žuri</h2>
+        <p>Dolazite sa fotografijom koja vam nešto znači - stara slika dede, jedina sačuvana fotografija iz detinjstva, snimak sa venčanja roditelja. Mi je popravimo, uramimo ili prenesemo na platno, i nosite je kući onakvu kakvu ste zamislili.</p>
+        <p>Fotografije za dokumenta radimo po važećim pravilima za lične karte, pasoše i vozačke dozvole, tako da vam ih ne vrate na šalteru zbog pogrešnog formata.</p>
+
+        <div class="about-points">
+          <div class="point">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
+            <div class="point-text">
+              <h3>Isti ljudi za šalterom</h3>
+              <p>Ne menjamo lokaciju niti osoblje. Ko dođe jednom, zna koga će zateći i sledeći put.</p>
+            </div>
+          </div>
+          <div class="point">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
+            <div class="point-text">
+              <h3>Bez zakazivanja za dokumenta</h3>
+              <p>Za sliku za ličnu kartu ili pasoš nije potreban termin. Dođete, slikamo, sačekate gotovu sliku.</p>
+            </div>
+          </div>
+          <div class="point">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>
+            <div class="point-text">
+              <h3>Radimo i sa oštećenim slikama</h3>
+              <p>Poderana, ulepljena ili izbledela fotografija ne ide u smeće. Prvo pogledamo šta se može spasiti, pa vam kažemo iskreno.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image">
+        <img src="assets/retusiranje_obrada_fotografije-min.jpg" alt="Stare porodične fotografije pre i posle obrade u radnji">
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt section-border-top" id="kontakt">
+    <div class="wrap contact-inner">
+      <div class="contact-details">
+        <span class="eyebrow">Kontakt</span>
+        <h2 class="section-title">Svratite ili nas pozovite</h2>
+        <p class="section-lead" style="margin-bottom: 32px;">Radnja se nalazi u Beogradu, lako dostupna gradskim prevozom. Ako niste sigurni šta vam treba, pozovite i objasnite, uputićemo vas.</p>
+
+        <div class="info-row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div>
+            <h3>Adresa</h3>
+            <p>Bulevar kralja Aleksandra 73, Beograd</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2L8 10a16 16 0 006 6l1.3-1.2a2 2 0 012-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg>
+          <div>
+            <h3>Telefon</h3>
+            <p>011 2455 678</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          <div>
+            <h3>Email</h3>
+            <p>info@fotojockovic.com</p>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2c3e50" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div>
+            <h3>Radno vreme</h3>
+            <p>Ponedeljak - petak: 08:00 - 20:00<br>Subota: 09:00 - 15:00<br>Nedeljom ne radimo</p>
+          </div>
+        </div>
+
+        <div class="contact-cta">
+          <a href="tel:011245678" class="btn">Pozovi nas</a>
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <div class="placeholder-img">MAPA LOKACIJE RADNJE</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Ono zbog čega ljudi najčešće dolaze</h2>
-      <p>Većina posla je jednostavna. Slike za dokumenta, štampanje sa telefona ili kartice, popravka starih fotografija. Sve to uradimo brzo, obično dok ste tu.</p>
-    </div>
-    <div class="services">
-
-      <div class="card">
-        <div class="thumb"><img src="assets/fotografije_za_dokumenta-min.jpg" alt="Portreti raznih osoba u formatu za lična dokumenta i pasoš"></div>
-        <div class="card-body">
-          <h3>Fotografije za dokumenta</h3>
-          <p>Za pasoš, ličnu, vozačku, vizu. Slikamo na licu mesta, format i pozadinu radimo po pravilima. Gotovo za par minuta.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-badge">
+            <img src="assets/logo.png" alt="Znak foto radnje Jocković">
+          </span>
+          <span class="logo-text">Foto Jocković</span>
         </div>
+        <p>Foto radnja u Beogradu za slike, dokumenta, uramljivanje i foto poklone.</p>
       </div>
 
-      <div class="card">
-        <div class="thumb"><img src="assets/izrada_fotografija-min.jpg" alt="Kolaž odštampanih fotografija sa putovanja i porodičnih okupljanja"></div>
-        <div class="card-body">
-          <h3>Izrada fotografija</h3>
-          <p>Donesete USB, memorijsku karticu ili pošaljete slike. Štampamo u standardnim i većim formatima, na mat ili sjajnom papiru.</p>
-        </div>
+      <div class="footer-col">
+        <h3>Usluge</h3>
+        <a href="#usluge">Izrada fotografija</a>
+        <a href="#usluge">Fotografije za dokumenta</a>
+        <a href="#usluge">Uramljivanje</a>
+        <a href="#usluge">Foto pokloni</a>
       </div>
 
-      <div class="card">
-        <div class="thumb"><img src="assets/retusiranje_obrada_fotografije-min.jpg" alt="Stare izgužvane fotografije pre i posle retuširanja i popravke"></div>
-        <div class="card-body">
-          <h3>Retuširanje i obrada</h3>
-          <p>Stara slika je pocepana, izbledela ili ima flеke. Vratimo je koliko god može. Radimo i obradu portreta pre štampe.</p>
-        </div>
+      <div class="footer-col">
+        <h3>Radnja</h3>
+        <a href="#o-nama">O nama</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#pocetna">Početna</a>
       </div>
 
-      <div class="card">
-        <div class="thumb"><img src="assets/uramljivanje-fotografija-min.jpg" alt="Uramljena fotografija žene u crvenom u više slojeva ramova"></div>
-        <div class="card-body">
-          <h3>Uramljivanje</h3>
-          <p>Biramo ram i paspartu uz vas. Uokvirimo sliku, diplomu ili sertifikat tako da može odmah da se okači.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="thumb"><img src="assets/slike_na_platnu_canvas-min.jpg" alt="Slike na platnu iznad kauča i porodični portreti odštampani na kanvasu"></div>
-        <div class="card-body">
-          <h3>Slike na platnu</h3>
-          <p>Vaša fotografija na kanvasu, razapeta na ramu. Lepo izgleda na zidu i dobro se drži godinama.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="thumb"><img src="assets/vhs_na_dvd-min.jpg" alt="VHS kasete koje se prebacuju na DVD i razni mediji za presnimavanje"></div>
-        <div class="card-body">
-          <h3>Presnimavanje VHS na DVD</h3>
-          <p>Stare kasete se troše i prestanu da rade. Prebacimo snimke na DVD ili fajl dok se još čitaju.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="pokloni" class="extra">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Foto pokloni i sitne stvari za štampu</h2>
-      <p>Kada treba nešto konkretno za rođendan, poklon ili firmu. Sve radimo od vaše slike ili teksta.</p>
-    </div>
-
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:28px; margin-bottom:40px;">
-      <div class="card">
-        <div class="thumb"><img src="assets/foto_solje_solja_sa_slikom-min.jpg" alt="Šolje, magneti i podmetači sa odštampanim fotografijama"></div>
-        <div class="card-body">
-          <h3>Foto šolje i pokloni sa slikom</h3>
-          <p>Šolja sa slikom deteta, kluba ili para. Radimo i foto puzzle, kalendare, pozivnice i magnete.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="thumb"><img src="assets/izrada_pecata-min.jpg" alt="Različiti automatski pečati sa uputstvom za sklapanje"></div>
-        <div class="card-body">
-          <h3>Pečati i vizit karte</h3>
-          <p>Izrada pečata za firmu ili radnju, po vašem tekstu. Uz to štampamo vizit karte u malim i velikim tiražima.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="extra-list">
-      <div class="extra-item">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg>
-        <div><h4>Foto puzzle</h4><p>Vaša slika isečena u slagalicu. Dobar poklon za decu.</p></div>
-      </div>
-      <div class="extra-item">
-        <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16M9 3v5"/></svg>
-        <div><h4>Foto kalendar</h4><p>Zidni ili stoni kalendar sa vašim fotografijama za svaki mesec.</p></div>
-      </div>
-      <div class="extra-item">
-        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 8l9 5 9-5"/></svg>
-        <div><h4>Foto pozivnice</h4><p>Pozivnice za venčanje, rođendan ili krštenje sa vašom slikom.</p></div>
-      </div>
-      <div class="extra-item">
-        <svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4z"/><path d="M8 4v4h8"/><path d="M8 12h8M8 16h5"/></svg>
-        <div><h4>Skeniranje</h4><p>Slike, dokumenti i papiri u digitalni fajl, u dobroj rezoluciji.</p></div>
-      </div>
-      <div class="extra-item">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M16 4v16M3 12h18"/></svg>
-        <div><h4>Foto montaža</h4><p>Spojimo više slika ili ubacimo osobu tamo gde treba.</p></div>
-      </div>
-      <div class="extra-item">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5-6 6"/></svg>
-        <div><h4>Presnimavanje na fajl</h4><p>Stari negativi, dijapozitivi i kasete prebačeni na USB.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="o-nama">
-  <div class="wrap about-grid">
-    <div class="about-img">
-      <div class="ph">FOTOGRAFIJA ULAZA U RADNJU</div>
-    </div>
-    <div>
-      <div class="section-head" style="margin-bottom:24px;">
-        <h2>O radnji Jocković</h2>
-      </div>
-      <p>Držimo foto radnju u Beogradu i radimo posao koji se ne menja mnogo, samo mašine postaju drugačije. Slika za pasoš danas i slika za pasoš pre dvadeset godina traže isto: da čovek izađe zadovoljan i da mu prođe na šalteru.</p>
-      <p>Većina ljudi kod nas dođe zbog dokumenta ili štampanja slika. Neki donesu staru sliku bake koja je počela da bledi i pitaju da li može nešto. Skoro uvek može.</p>
-      <p>Ako niste sigurni da li radimo baš to što vam treba, pozovite pa da vidimo. Lakše je reći na telefonu nego da dolazite badava.</p>
-      <a href="#kontakt" class="btn-outline">Kako da nas nađete</a>
-    </div>
-  </div>
-</section>
-
-<section id="kontakt" class="contact">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Dođite ili nas pozovite</h2>
-      <p>Za većinu stvari najbrže je da svratite sa slikama ili USB-om. Ako imate pitanje pre nego što dođete, javite se telefonom.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-block">
-        <h3>Adresa i kontakt</h3>
-        <p>Foto Jocković, Beograd</p>
-        <a href="tel:+381000000000">+381 00 000 000</a>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <a href="tel:011245678">011 2455 678</a>
         <a href="mailto:info@fotojockovic.com">info@fotojockovic.com</a>
-        <a href="#" class="btn">Pozovi radnju</a>
-      </div>
-      <div class="contact-block">
-        <h3>Radno vreme</h3>
-        <div class="hours-row"><span>Ponedeljak - petak</span><span>09 - 20h</span></div>
-        <div class="hours-row"><span>Subota</span><span>09 - 15h</span></div>
-        <div class="hours-row"><span>Nedelja</span><span>ne radimo</span></div>
+        <a href="#kontakt">Bulevar kralja Aleksandra 73</a>
       </div>
     </div>
-  </div>
-</section>
 
-<footer>
-  <div class="wrap footer-inner">
-    <span>Foto Jocković, Beograd</span>
-    <span>Izrada fotografija, dokumenta, uramljivanje i foto pokloni</span>
+    <div class="footer-bottom">
+      Foto Jocković. Sva prava zadržana.
+    </div>
   </div>
 </footer>
 
 <script>
-  var burger = document.getElementById('hamburger');
-  var menu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', function () {
-    menu.classList.toggle('open');
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  hamburgerBtn.addEventListener('click', function () {
+    var isOpen = mobileMenu.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
-  menu.querySelectorAll('a').forEach(function (link) {
+
+  var mobileLinks = mobileMenu.querySelectorAll('a');
+  mobileLinks.forEach(function (link) {
     link.addEventListener('click', function () {
-      menu.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
     });
   });
 </script>
