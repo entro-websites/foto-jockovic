@@ -7,7 +7,7 @@
 <meta name="description" content="Foto Jocković - izrada fotografija, slike za dokumenta, uramljivanje, slike na platnu, retuširanje i foto pokloni u Beogradu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f2e7da;
@@ -17,7 +17,7 @@
     --muted: #6e655b;
     --line: #d8c8b6;
     --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'Jost', Arial, sans-serif;
+    --sans: 'Cormorant Garamond', Georgia, serif;
   }
 
   * { box-sizing: border-box; }
@@ -29,9 +29,9 @@
     background: var(--bg);
     color: var(--ink);
     font-family: var(--sans);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.8;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.7;
     overflow-x: hidden;
   }
 
@@ -64,8 +64,8 @@
 
   .label {
     font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--muted);
@@ -91,14 +91,14 @@
   .lead {
     max-width: 60ch;
     color: var(--muted);
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .link-underline {
     display: inline-block;
     font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--ink);
@@ -124,7 +124,8 @@
     justify-content: center;
     text-align: center;
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
@@ -142,7 +143,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 96px;
+    padding-top: 176px;
     padding-bottom: 96px;
     overflow: hidden;
   }
@@ -214,8 +215,12 @@
   /* ---------- NAVBAR ---------- */
 
   .navbar {
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background: transparent;
   }
 
   .nav-inner {
@@ -235,20 +240,21 @@
 
   .nav-side a {
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: #f7f1e8;
   }
 
-  .nav-side a:hover { color: var(--muted); }
+  .nav-side a:hover { color: #cbbfae; }
 
   .nav-word {
     font-family: var(--serif);
     font-size: 24px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: #f7f1e8;
     white-space: nowrap;
   }
 
@@ -269,15 +275,14 @@
     display: block;
     width: 100%;
     height: 1px;
-    background: var(--ink);
+    background: #f7f1e8;
   }
 
   .mobile-menu { display: none; }
 
   .mobile-menu.open {
     display: block;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    background: rgba(36, 31, 26, 0.96);
     padding-top: 16px;
     padding-bottom: 24px;
   }
@@ -285,24 +290,34 @@
   .mobile-menu a {
     display: block;
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
+    color: #f7f1e8;
     padding-top: 16px;
     padding-bottom: 16px;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(247, 241, 232, 0.24);
   }
 
   /* ---------- KOLAŽ ---------- */
 
   .collage-head {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 56px;
+  }
+
+  .collage-head h2 { margin-bottom: 16px; }
+
+  .collage-head .lead {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
   }
 
   .collage {
     display: grid;
-    grid-template-columns: 1fr 1.25fr 1fr;
+    grid-template-columns: 1.4fr 1fr 1fr;
     align-items: start;
     gap: 32px;
   }
@@ -312,22 +327,20 @@
     object-fit: cover;
   }
 
-  .collage-left { margin-top: 64px; }
+  .collage-big img { height: 560px; }
 
-  .collage-left img { height: 380px; }
-
-  .collage-center { margin-top: -48px; }
-
-  .collage-center img { height: 520px; }
-
-  .collage-right {
+  .collage-stack {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-top: 32px;
+    margin-top: 96px;
   }
 
-  .collage-right img { height: 220px; }
+  .collage-stack img { height: 260px; }
+
+  .collage-side { margin-top: 32px; }
+
+  .collage-side img { height: 400px; }
 
   /* ---------- CENTRIRANI UVOD ---------- */
 
@@ -541,15 +554,15 @@
 
   .step h3 {
     font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     margin-bottom: 16px;
   }
 
   .step p {
-    font-size: 16px;
+    font-size: 20px;
     color: var(--muted);
     margin-bottom: 0;
   }
@@ -665,7 +678,8 @@
 
   .footer-col a {
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--ink);
@@ -701,9 +715,11 @@
     .stagger-head { font-size: 40px; }
 
     .collage { grid-template-columns: 1fr 1fr; }
-    .collage-left, .collage-center, .collage-right { margin-top: 0; }
-    .collage-center img { height: 380px; }
-    .collage-right { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; grid-column: span 2; }
+    .collage-stack, .collage-side { margin-top: 0; }
+    .collage-big img { height: 440px; }
+    .collage-stack img { height: 208px; }
+    .collage-side { grid-column: span 2; }
+    .collage-side img { height: 320px; }
 
     .tiles { grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .tile img { height: 360px; }
@@ -731,7 +747,7 @@
     .wrap { padding-left: 20px; padding-right: 20px; }
     .section { padding-top: 64px; padding-bottom: 64px; }
 
-    .hero { padding-top: 64px; padding-bottom: 64px; min-height: 400px; }
+    .hero { padding-top: 144px; padding-bottom: 64px; min-height: 400px; }
     .hero h1 { font-size: 40px; }
     .hero-row { flex-direction: column; gap: 8px; }
     .hero-tagline { font-size: 20px; }
@@ -743,8 +759,10 @@
     .nav-word { font-size: 20px; }
 
     .collage { grid-template-columns: 1fr 1fr; gap: 16px; }
-    .collage-left img, .collage-center img { height: 260px; }
-    .collage-right img { height: 160px; }
+    .collage-big img { height: 320px; }
+    .collage-stack { gap: 16px; }
+    .collage-stack img { height: 152px; }
+    .collage-side img { height: 240px; }
 
     .panel { padding-top: 24px; padding-bottom: 24px; padding-left: 24px; padding-right: 24px; }
     .tiles { grid-template-columns: 1fr; gap: 16px; }
@@ -822,17 +840,18 @@
   <section class="section">
     <div class="wrap">
       <div class="collage-head">
-        <h2 class="display">Neka uspomena<br>ostane zauvek</h2>
+        <h2 class="display">Uspomene koje<br>se drže u ruci</h2>
+        <p class="lead">Telefon pamti hiljade slika i nijednu ne pokaže. Odštampana fotografija stoji na polici, ide u album i preživi promenu telefona. Donesete fajl ili staru sliku, ostalo je naš posao.</p>
       </div>
       <div class="collage">
-        <div class="collage-left">
-          <img src="assets/fotografije_za_dokumenta-min.jpg" alt="Portret za lična dokumenta na jednobojnoj pozadini">
-        </div>
-        <div class="collage-center">
+        <div class="collage-big">
           <img src="assets/slike_na_platnu_canvas-min.jpg" alt="Fotografija odštampana na platnu okačena na zid">
         </div>
-        <div class="collage-right">
+        <div class="collage-stack">
+          <img src="assets/fotografije_za_dokumenta-min.jpg" alt="Portret za lična dokumenta na jednobojnoj pozadini">
           <img src="assets/retusiranje_obrada_fotografije-min.jpg" alt="Stara fotografija pre i posle retuširanja">
+        </div>
+        <div class="collage-side">
           <img src="assets/uramljivanje-fotografija-min.jpg" alt="Uramljena fotografija u drvenom ramu sa paspartuom">
         </div>
       </div>
