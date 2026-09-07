@@ -108,6 +108,13 @@
 
   .link-underline:hover { border-bottom-color: var(--ink); }
 
+  .link-underline.light {
+    color: #f7f1e8;
+    border-bottom-color: rgba(247, 241, 232, 0.4);
+  }
+
+  .link-underline.light:hover { border-bottom-color: #f7f1e8; }
+
   .monogram {
     font-family: var(--serif);
     font-size: 32px;
@@ -169,7 +176,9 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(36, 31, 26, 0.72), rgba(36, 31, 26, 0.88));
+    background:
+      radial-gradient(ellipse 60% 55% at 50% 48%, rgba(36, 31, 26, 0) 0%, rgba(36, 31, 26, 0.55) 100%),
+      linear-gradient(rgba(36, 31, 26, 0.72), rgba(36, 31, 26, 0.88));
   }
 
   .hero-inner {
@@ -179,16 +188,16 @@
   }
 
   .hero-mark {
-    width: 48px;
-    height: 48px;
+    width: 160px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
 
   .hero h1 {
-    font-size: 88px;
-    letter-spacing: 0.02em;
+    font-size: 96px;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #f7f1e8;
     margin-bottom: 24px;
@@ -198,18 +207,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 48px;
-    margin-bottom: 24px;
+    gap: 32px;
+    margin-bottom: 32px;
   }
 
   .hero-row .label { color: #cbbfae; }
 
+  .hero-row .label + .label {
+    border-left: 1px solid rgba(247, 241, 232, 0.28);
+    padding-left: 32px;
+  }
+
+  .hero-rule {
+    width: 64px;
+    height: 1px;
+    background: rgba(247, 241, 232, 0.4);
+    margin: 0 auto 32px;
+  }
+
   .hero-tagline {
     font-family: var(--serif);
     font-style: italic;
-    font-size: 24px;
-    color: #e8ded1;
-    margin-bottom: 0;
+    font-size: 32px;
+    line-height: 1.4;
+    color: #f7f1e8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
   }
 
   /* ---------- NAVBAR ---------- */
@@ -303,57 +328,97 @@
   /* ---------- KOLAŽ ---------- */
 
   .collage-head {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: end;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 40px;
     margin-bottom: 56px;
   }
 
-  .collage-head h2 { margin-bottom: 16px; }
+  .collage-head .label { display: block; margin-bottom: 16px; }
+
+  .collage-head h2 { margin-bottom: 0; }
 
   .collage-head .lead {
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 52ch;
     margin-bottom: 0;
   }
 
   .collage {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     align-items: start;
-    gap: 32px;
+    gap: 24px;
   }
 
-  .collage img {
+  .frame {
+    margin: 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 12px;
+  }
+
+  .frame img {
     width: 100%;
+    height: 320px;
     object-fit: cover;
   }
 
-  .collage-big img { height: 560px; }
-
-  .collage-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 96px;
+  .frame .label {
+    display: block;
+    min-height: 40px;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 4px;
   }
 
-  .collage-stack img { height: 260px; }
+  .collage > .frame:nth-child(2n) { margin-top: 48px; }
 
-  .collage-side { margin-top: 32px; }
+  /* ---------- UVODNA TAMNA TRAKA ---------- */
 
-  .collage-side img { height: 400px; }
+  .band-dark { background: var(--dark); }
 
-  /* ---------- CENTRIRANI UVOD ---------- */
+  .band-dark h2 { color: #f7f1e8; }
 
-  .centered { text-align: center; }
+  .band-dark .quote-italic { color: #e8ded1; }
 
-  .centered h2 { margin-bottom: 16px; }
+  .band-dark .lead { color: #cbbfae; }
 
-  .centered .quote-italic { margin-bottom: 24px; }
+  .band-dark .label { color: #cbbfae; }
 
-  .centered .lead {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 32px;
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .intro-left .label { display: block; margin-bottom: 24px; }
+
+  .intro-left h2 { margin-bottom: 24px; }
+
+  .intro-left .quote-italic { margin-bottom: 0; }
+
+  .intro-right .lead { margin-bottom: 32px; }
+
+  .intro-list {
+    list-style: none;
+    margin: 0 0 32px 0;
+    padding: 0;
+    border-top: 1px solid rgba(247, 241, 232, 0.24);
+  }
+
+  .intro-list li {
+    font-family: var(--serif);
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #e8ded1;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(247, 241, 232, 0.24);
   }
 
   /* ---------- PANEL SA PLOČICAMA ---------- */
@@ -450,46 +515,59 @@
 
   /* ---------- ISTAKNUTA SEKCIJA ---------- */
 
-  .featured {
+  .format {
     display: grid;
-    grid-template-columns: 1fr 1.05fr;
-    align-items: center;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 80px;
+    align-items: start;
   }
 
-  .featured-card {
-    position: relative;
-    z-index: 1;
-    background: var(--panel);
-    padding-top: 64px;
-    padding-bottom: 64px;
-    padding-left: 96px;
-    padding-right: 64px;
+  .format-head .label { display: block; margin-bottom: 16px; }
+
+  .format-head h2 { margin-bottom: 24px; }
+
+  .format-statement {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0 0 48px 0;
   }
 
-  .featured-card h2 { margin-bottom: 24px; }
-
-  .featured-bottom {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+  .format-row {
+    display: grid;
+    grid-template-columns: 176px 1fr;
     gap: 32px;
-    margin-top: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-top: 1px solid var(--line);
   }
 
-  .featured-bottom img {
-    width: 120px;
-    height: 88px;
-    object-fit: cover;
+  .format-row:last-of-type { border-bottom: 1px solid var(--line); }
+
+  .format-row .label { padding-top: 4px; }
+
+  .format-row p {
+    color: var(--muted);
+    margin-bottom: 0;
   }
 
-  .featured-photo {
-    margin-right: -64px;
+  .format-cta { margin-top: 40px; }
+
+  .format-plate {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 16px;
   }
 
-  .featured-photo img {
-    width: 100%;
-    height: 720px;
-    object-fit: cover;
+  .format-plate img { width: 100%; }
+
+  .format-plate .label {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 4px;
   }
 
   /* ---------- STEPENASTE STAVKE ---------- */
@@ -706,18 +784,21 @@
 
     .hero { min-height: 480px; }
     .hero h1 { font-size: 56px; }
+    .hero-mark { width: 128px; margin-bottom: 32px; }
     .hero-row { gap: 24px; }
+    .hero-row .label + .label { padding-left: 24px; }
+    .hero-tagline { font-size: 24px; margin-bottom: 32px; }
 
     .display { font-size: 40px; }
     .statement blockquote { font-size: 24px; }
     .stagger-head { font-size: 40px; }
 
+    .collage-head { grid-template-columns: 1fr; gap: 24px; align-items: start; }
     .collage { grid-template-columns: 1fr 1fr; }
-    .collage-stack, .collage-side { margin-top: 0; }
-    .collage-big img { height: 440px; }
-    .collage-stack img { height: 208px; }
-    .collage-side { grid-column: span 2; }
-    .collage-side img { height: 320px; }
+    .collage > .frame:nth-child(2n) { margin-top: 0; }
+    .frame img { height: 280px; }
+
+    .intro { grid-template-columns: 1fr; gap: 40px; }
 
     .tiles { grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .tile img { height: 360px; }
@@ -726,15 +807,9 @@
     .two-col { grid-template-columns: 1fr; gap: 40px; }
     .two-col img { height: 400px; }
 
-    .featured { grid-template-columns: 1fr; }
-    .featured-card {
-      padding-left: 64px;
-      margin-top: -32px;
-      margin-left: 32px;
-      margin-right: 32px;
-    }
-    .featured-photo { margin-right: 0; margin-top: 0; margin-bottom: 0; }
-    .featured-photo img { height: 400px; }
+    .format { grid-template-columns: 1fr; gap: 48px; }
+    .format-statement { font-size: 24px; margin-bottom: 32px; }
+    .format-plate { max-width: 420px; margin-left: auto; margin-right: auto; }
 
     .stagger { grid-template-columns: repeat(2, 1fr); }
     .stagger-item:nth-child(2) { margin-top: 0; }
@@ -752,8 +827,11 @@
 
     .hero { padding-top: 144px; padding-bottom: 64px; min-height: 400px; }
     .hero h1 { font-size: 40px; }
+    .hero-mark { width: 112px; margin-bottom: 24px; }
     .hero-row { flex-direction: column; gap: 8px; }
-    .hero-tagline { font-size: 20px; }
+    .hero-row .label + .label { border-left: 0; padding-left: 0; }
+    .hero-rule { margin-bottom: 24px; }
+    .hero-tagline { font-size: 20px; margin-bottom: 32px; }
 
     .display { font-size: 32px; }
     .quote-italic { font-size: 20px; }
@@ -761,11 +839,11 @@
     .stagger-head { font-size: 32px; }
     .nav-word { font-size: 20px; }
 
-    .collage { grid-template-columns: 1fr 1fr; gap: 16px; }
-    .collage-big img { height: 320px; }
-    .collage-stack { gap: 16px; }
-    .collage-stack img { height: 152px; }
-    .collage-side img { height: 240px; }
+    .collage { grid-template-columns: 1fr; gap: 24px; }
+    .frame img { height: 260px; }
+    .frame .label { min-height: 0; }
+
+    .intro-list li { padding-top: 12px; padding-bottom: 12px; }
 
     .panel { padding-top: 24px; padding-bottom: 24px; padding-left: 24px; padding-right: 24px; }
     .tiles { grid-template-columns: 1fr; gap: 16px; }
@@ -773,15 +851,10 @@
     .tile img { height: 320px; }
     .tile-label { font-size: 24px; }
 
-    .featured-card {
-      padding-top: 32px;
-      padding-bottom: 32px;
-      padding-left: 24px;
-      padding-right: 24px;
-      margin-left: 16px;
-      margin-right: 16px;
-    }
-    .featured-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .format-statement { font-size: 20px; }
+    .format-row { grid-template-columns: 1fr; gap: 8px; }
+    .format-row .label { padding-top: 0; }
+    .format-plate { padding: 12px; }
 
     .stagger { grid-template-columns: 1fr; gap: 40px; }
     .stagger-item img, .stagger-item .placeholder-img { height: 280px; }
@@ -839,7 +912,9 @@
       <span class="label">Izrada fotografija</span>
       <span class="label">Foto radnja u Beogradu</span>
     </div>
+    <div class="hero-rule"></div>
     <p class="hero-tagline">Slika koja vam nešto znači zaslužuje da bude odštampana kako treba</p>
+    <a href="#usluge" class="link-underline light">Pogledajte usluge</a>
   </div>
 </header>
 
@@ -850,30 +925,49 @@
   <section class="section">
     <div class="wrap">
       <div class="collage-head">
-        <h2 class="display">Uspomene koje<br>se drže u ruci</h2>
+        <div>
+          <span class="label">Štampa i uspomene</span>
+          <h2 class="display">Uspomene koje<br>se drže u ruci</h2>
+        </div>
         <p class="lead">Telefon pamti hiljade slika i nijednu ne pokaže. Odštampana fotografija stoji na polici, ide u album i preživi promenu telefona. Donesete fajl ili staru sliku, ostalo je naš posao.</p>
       </div>
       <div class="collage">
-        <div class="collage-big">
+        <figure class="frame">
           <img src="assets/slike_na_platnu_canvas-min.jpg" alt="Fotografija odštampana na platnu okačena na zid">
-        </div>
-        <div class="collage-stack">
+          <figcaption class="label">Slike na platnu</figcaption>
+        </figure>
+        <figure class="frame">
           <img src="assets/fotografije_za_dokumenta-min.jpg" alt="Portret za lična dokumenta na jednobojnoj pozadini">
+          <figcaption class="label">Slike za dokumenta</figcaption>
+        </figure>
+        <figure class="frame">
           <img src="assets/retusiranje_obrada_fotografije-min.jpg" alt="Stara fotografija pre i posle retuširanja">
-        </div>
-        <div class="collage-side">
+          <figcaption class="label">Retuširanje starih slika</figcaption>
+        </figure>
+        <figure class="frame">
           <img src="assets/uramljivanje-fotografija-min.jpg" alt="Uramljena fotografija u drvenom ramu sa paspartuom">
-        </div>
+          <figcaption class="label">Uramljivanje</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap centered">
-      <h2 class="display">Mi smo Foto Jocković</h2>
-      <p class="quote-italic">Radnja u kojoj se fotografija ne žuri</p>
-      <p class="lead">Dolazite sa fotografijom koja vam nešto znači - stara slika dede, jedina sačuvana fotografija iz detinjstva, snimak sa venčanja roditelja. Popravimo je, uramimo ili prenesemo na platno, i nosite je kući onakvu kakvu ste zamislili.</p>
-      <a href="#kontakt" class="link-underline">Javite nam se</a>
+  <section class="section band-dark">
+    <div class="wrap intro">
+      <div class="intro-left">
+        <span class="label">O radnji</span>
+        <h2 class="display">Mi smo Foto Jocković</h2>
+        <p class="quote-italic">Radnja u kojoj se fotografija ne žuri</p>
+      </div>
+      <div class="intro-right">
+        <p class="lead">Dolazite sa fotografijom koja vam nešto znači - stara slika dede, jedina sačuvana fotografija iz detinjstva, snimak sa venčanja roditelja. Popravimo je, uramimo ili prenesemo na platno, i nosite je kući onakvu kakvu ste zamislili.</p>
+        <ul class="intro-list">
+          <li>Izrada i štampa fotografija</li>
+          <li>Popravka i retuširanje starih slika</li>
+          <li>Uramljivanje i slike na platnu</li>
+        </ul>
+        <a href="#kontakt" class="link-underline light">Javite nam se</a>
+      </div>
     </div>
   </section>
 
@@ -921,18 +1015,29 @@
   </section>
 
   <section class="section">
-    <div class="wrap featured">
-      <div class="featured-photo">
-        <img src="assets/slike_na_platnu_canvas-min.jpg" alt="Platno sa odštampanom fotografijom u dnevnoj sobi">
-      </div>
-      <div class="featured-card">
+    <div class="wrap format">
+      <div class="format-head">
+        <span class="label">Platno i uramljivanje</span>
         <h2 class="display">Platno, ram<br>i pravi format</h2>
-        <p class="lead">Donesete sliku i kažete gde ide. Format merimo prema zidu, ram biramo u drvetu ili metalu, sa paspartuom ili bez. Ako fotografija nema dovoljno rezolucije za veliko platno, kažemo vam pre štampe, a ne posle.</p>
-        <div class="featured-bottom">
-          <img src="assets/izrada_fotografija-min.jpg" alt="Fotografije pripremljene za štampu">
-          <a href="#kontakt" class="link-underline">Pitajte za format</a>
+        <p class="format-statement">Donesete sliku i kažete gde ide, ostalo merimo i biramo zajedno.</p>
+        <div class="format-row">
+          <span class="label">Format</span>
+          <p>Merimo prema zidu na koji slika ide, pa biramo veličinu koja tu stvarno stoji.</p>
         </div>
+        <div class="format-row">
+          <span class="label">Ram i paspartu</span>
+          <p>Ram u drvetu ili metalu, sa paspartuom ili bez. Uzorke vidite pre nego što se odlučite.</p>
+        </div>
+        <div class="format-row">
+          <span class="label">Rezolucija</span>
+          <p>Ako fotografija nema dovoljno rezolucije za veliko platno, kažemo vam pre štampe, a ne posle.</p>
+        </div>
+        <a href="#kontakt" class="link-underline format-cta">Pitajte za format</a>
       </div>
+      <figure class="format-plate">
+        <img src="assets/slike_na_platnu_canvas-min.jpg" alt="Platno sa odštampanom fotografijom u dnevnoj sobi">
+        <figcaption class="label">Platno na zidu, format po meri</figcaption>
+      </figure>
     </div>
   </section>
 
